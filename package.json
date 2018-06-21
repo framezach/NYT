@@ -1,0 +1,28 @@
+{
+  "name": "nyt",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/framezach/NYT.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/framezach/NYT/issues"
+  },
+  "homepage": "https://github.com/framezach/NYT#readme",
+  "dependencies": {
+    "axios": "^0.18.0",
+    "body-parser": "^1.18.3",
+    "mongoose": "^5.1.6",
+    "morgan": "^1.9.0",
+    "react": "^16.4.1",
+    "react-dom": "^16.4.1"
+  }
+}
