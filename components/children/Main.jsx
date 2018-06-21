@@ -42,13 +42,6 @@ var Main = React.createClass({
     helpers.apiGet().then(function(query){
       this.setState({mongoResults: query.data});
     }.bind(this));
-
-    // console.log('API Results')
-    // console.log(this.state.apiResults)
-
-    // console.log('')
-    // console.log('Mongo Results')
-    // console.log(this.state.mongoResults)
   },
 
 
@@ -65,8 +58,6 @@ var Main = React.createClass({
     }
 
   },
-
-
   // Here we render the function
   render: function() {
     return (
