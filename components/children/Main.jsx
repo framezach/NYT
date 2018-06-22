@@ -1,20 +1,9 @@
-// Contains the main-container div that holds the main layout and navigation. 
-// This component should also be able to hold sub-components Search and Saved
-
-// Include React
-var React = require("react");
-
-// UN COMMENT ALL THESE LATER!
-// Here we include all of the sub-components
-var Query = require("./Query.jsx");
-var Search = require("./Search.jsx");
-var Saved = require("./Saved.jsx");
-
-// Requiring our helper for making API calls
-var helpers = require("../utils/helpers.js");
-
-// Create the Main Component
-var Main = React.createClass({
+let React = require("react");
+let Query = require("./Query.jsx");
+let Search = require("./Search.jsx");
+let Saved = require("./Saved.jsx");
+let helpers = require("../utils/helpers.js");
+let Main = React.createClass({
 
   // Here we set a generic state
   getInitialState: function() {
@@ -47,12 +36,8 @@ var Main = React.createClass({
 
   // If the component changes (i.e. if a search is entered)...
   componentDidUpdate: function(prevProps, prevState) {
-
-    // Only hit the API once; i.e. if the prev state does not equal the current
     if(this.state.searchTerms != prevState.searchTerms){
-      // Run the query for the address
       helpers.articleQuery(this.state.searchTerms[0], this.state.searchTerms[1], this.state.searchTerms[2]).then(function(data) {
-        //console.log(data);
         this.setState({ apiResults: data });
       }.bind(this));
     }
@@ -65,8 +50,7 @@ var Main = React.createClass({
       <div className="container" style={ {backgroundColor: "white", borderStyle: "solid", borderWidth: "1px"} }>
 
         <div className="page-header">
-          <h1 className="text-center"><img style={ {width: "70%"} }  alt="The New York Times"/></h1>
-          <h4 className="text-center">Search for Articles and Save Them for Later</h4>
+          <h1 className="text-center">The New York Times</h1>
         </div>
 
         <Query _setSearchFeilds={this._setSearchFeilds} />

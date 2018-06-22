@@ -1,14 +1,6 @@
-// Displays the Saved Articles that were searched and stored in the database
-
-
-// Include React
-var React = require("react");
-
-// Requiring our helper for making API calls
-var helpers = require("../utils/helpers.js");
-
-// Create the Search Component
-var Saved = React.createClass({
+let React = require("react");
+let helpers = require("../utils/helpers.js");
+let Saved = React.createClass({
 
   // Here we set a generic state
   getInitialState: function() {
@@ -18,12 +10,8 @@ var Saved = React.createClass({
   },
 
   _handleDelete: function(event) {
-
-    // Collect the clicked article's id
-    var articleMongoId = event.target.value;
-
-    // Copy "this" into "that" so that component is accessible inside the functions.
-    var that = this;
+    let articleMongoId = event.target.value;
+    let that = this;
 
     // Send this data to the API endpoint to save it to Mongo
     helpers.apiDelete(articleMongoId).then(function(){
@@ -41,9 +29,7 @@ var Saved = React.createClass({
   // Here we render the Search Results Panel
   render: function() {
 
-    // http://stackoverflow.com/questions/29810914/react-js-onclick-cant-pass-value-to-method
-    // another way could be using the bind() function. but why not try it this way too.
-    var that = this;
+    let that = this;
 
     return (
 
